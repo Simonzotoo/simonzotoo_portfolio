@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Index</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .cursor {
+      display: inline-block;
+      font-weight: bold;
+      color: white;
+      animation: blink 0.7s steps(1) infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+  </style>
 </head>
 <body>
   
@@ -19,49 +32,23 @@
   </ul>
 </nav>
 
-  <main>
-<section class="hero">
-  <div class="hero-left">
-    <img src="assets/images/jaykeys.jpg" alt="Simon Zotoo">
-  </div>
-  <div class="hero-right">
-    <h1>Hi, I'm Simon Zotoo</h1>
-    <p><span class="typed-text"></span><span class="cursor">|</span></p>
-    <a href="projects.html" class="btn">See My Work</a>
-    <a href="assets/Simon_Zotoo_Resume.pdf" class="btn alt" target="_blank">Download CV</a>
-  </div>
-</section>
-
-
+<main>
+  <section class="hero">
+    <div class="hero-left">
+      <img src="assets/images/jaykeys.jpg" alt="Simon Zotoo">
+    </div>
+    <div class="hero-right">
+      <h1>Hi, I'm Simon Zotoo</h1>
+      <p><span class="typed-text"></span><span class="cursor">|</span></p>
+      <a href="projects.html" class="btn">See My Work</a>
+      <a href="assets/Simon_Zotoo_Resume.pdf" class="btn alt" target="_blank">Download CV</a>
+    </div>
+  </section>
 </main>
   
 <footer>
   <p>&copy; 2025 Simon Zotoo. All rights reserved.</p>
 </footer>
-
-<script>
-const typedText = document.querySelector(".typed-text");
-const words = ["Data Analyst", "Developer", "SCOTSA President"];
-let wordIndex = 0;
-let charIndex = 0;
-
-function typeWord() {
-  if (charIndex < words[wordIndex].length) {
-    typedText.textContent += words[wordIndex].charAt(charIndex);
-    charIndex++;
-    setTimeout(typeWord, 120);
-  } else {
-    setTimeout(() => {
-      wordIndex = (wordIndex + 1) % words.length;
-      typedText.textContent = "";
-      charIndex = 0;
-      typeWord();
-    }, 2000); // pause 2 seconds before changing word
-  }
-}
-
-typeWord();
-</script>
 
 <script>
 const typedText = document.querySelector(".typed-text");
@@ -85,7 +72,7 @@ function typeOnce() {
           typeOnce();
         }, 1500);
       } else {
-        cursor.style.display = "none"; // hide cursor when done
+        cursor.style.display = "none";
       }
     }
   }
