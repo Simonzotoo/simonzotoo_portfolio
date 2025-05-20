@@ -38,34 +38,30 @@
   <p>&copy; 2025 Simon Zotoo. All rights reserved.</p>
 </footer>
 
-  <script>
+<script>
 const typedText = document.querySelector(".typed-text");
-const cursor = document.querySelector(".cursor");
 const words = ["Data Analyst", "Developer", "SCOTSA President"];
 let wordIndex = 0;
 let charIndex = 0;
-let isDeleting = false;
 
-function type() {
-  const currentWord = words[wordIndex];
-  const currentChar = currentWord.substring(0, charIndex);
-  typedText.textContent = currentChar;
-
-  if (!isDeleting && charIndex < currentWord.length) {
+function typeWord() {
+  if (charIndex < words[wordIndex].length) {
+    typedText.textContent += words[wordIndex].charAt(charIndex);
     charIndex++;
-    setTimeout(type, 100);
-  } else if (isDeleting && charIndex > 0) {
-    charIndex--;
-    setTimeout(type, 50);
+    setTimeout(typeWord, 120);
   } else {
-    isDeleting = !isDeleting;
-    if (!isDeleting) wordIndex = (wordIndex + 1) % words.length;
-    setTimeout(type, 1000);
+    setTimeout(() => {
+      wordIndex = (wordIndex + 1) % words.length;
+      typedText.textContent = "";
+      charIndex = 0;
+      typeWord();
+    }, 2000); // pause 2 seconds before changing word
   }
 }
 
-type();
+typeWord();
 </script>
+
 
 </body>
 </html>
