@@ -172,4 +172,15 @@ footer {
   height: auto;
   object-fit: cover;
 }
+.cursor {
+  display: inline-block;
+  font-weight: bold;
+  color: white;
+  animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
 
