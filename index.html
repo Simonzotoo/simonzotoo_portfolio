@@ -28,9 +28,10 @@
     <h1>Hi, I'm Simon Zotoo</h1>
     <p><span class="typed-text"></span><span class="cursor">|</span></p>
     <a href="projects.html" class="btn">See My Work</a>
-    <a href="assets/Simon_Zotoo_Resume.pdf" class="btn alt" target="_blank">Download Resume</a>
+    <a href="assets/Simon_Zotoo_Resume.pdf" class="btn alt" target="_blank">Download CV</a>
   </div>
 </section>
+
 
 </main>
   
@@ -62,6 +63,36 @@ function typeWord() {
 typeWord();
 </script>
 
+<script>
+const typedText = document.querySelector(".typed-text");
+const cursor = document.querySelector(".cursor");
+const phrases = ["Data Analyst", "Developer", "SCOTSA President"];
+let phraseIndex = 0;
+let letterIndex = 0;
+
+function typeOnce() {
+  if (phraseIndex < phrases.length) {
+    if (letterIndex < phrases[phraseIndex].length) {
+      typedText.textContent += phrases[phraseIndex].charAt(letterIndex);
+      letterIndex++;
+      setTimeout(typeOnce, 100);
+    } else {
+      phraseIndex++;
+      if (phraseIndex < phrases.length) {
+        setTimeout(() => {
+          typedText.textContent += " | ";
+          letterIndex = 0;
+          typeOnce();
+        }, 1500);
+      } else {
+        cursor.style.display = "none"; // hide cursor when done
+      }
+    }
+  }
+}
+
+typeOnce();
+</script>
 
 </body>
 </html>
