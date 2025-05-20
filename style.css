@@ -201,3 +201,40 @@ body.dark footer {
   background: #111;
   color: #aaa;
 }
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .hero img {
+    max-width: 80%;
+    margin: 0 auto 20px;
+    display: block;
+  }
+
+  .section {
+    padding: 40px 20px;
+  }
+
+  .skills, .projects, .blog, .contact {
+    text-align: center;
+  }
+}
+
+/* Logo/Image Fix */
+.hero img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 20px;
+}
