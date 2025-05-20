@@ -2,7 +2,8 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  background: #f0f4f8;
+  padding: 0;
+  background: #f4f8fc;
   color: #333;
 }
 
@@ -14,8 +15,8 @@ nav {
 
 nav ul {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
   display: inline-flex;
   gap: 20px;
 }
@@ -29,21 +30,38 @@ nav ul li a {
 .hero {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  justify-content: space-around;
-  padding: 50px;
+  padding: 40px;
   background: linear-gradient(90deg, #003366, #005599);
   color: white;
 }
 
-.hero-text {
-  max-width: 500px;
+.hero-left img {
+  max-width: 280px;
+  border-radius: 12px;
+  margin-right: 30px;
 }
 
-.hero-image img {
-  max-width: 250px;
-  border-radius: 10px;
-  margin-top: 20px;
+.hero-right {
+  max-width: 500px;
+  text-align: left;
+}
+
+.btn {
+  display: inline-block;
+  background: white;
+  color: #003366;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.btn.alt {
+  background: #005599;
+  color: white;
 }
 
 main {
@@ -51,24 +69,9 @@ main {
 }
 
 footer {
-  background: #003366;
-  color: white;
   text-align: center;
   padding: 20px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  margin-right: 10px;
-  background-color: white;
-  color: #003366;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.btn.alt {
-  background-color: #005599;
+  background: #003366;
   color: white;
+  margin-top: 40px;
 }
