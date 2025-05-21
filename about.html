@@ -2,46 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  <title>About</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+  <title>About</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <script defer>
-    document.addEventListener('DOMContentLoaded', function() {
-      const navToggle = document.querySelector('.nav-toggle');
-      const navMenu = document.querySelector('.nav-menu');
-      
-      function toggleMenu() {
-        navToggle.classList.toggle('active');
-        navMenu.classList.toggle('active');
-      }
-
-      navToggle.addEventListener('click', toggleMenu);
-      
-      // Close menu when clicking a link
-      document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', toggleMenu);
-      });
-
-      // Close menu when clicking outside
-      document.addEventListener('click', function(e) {
-        if (!navToggle.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('active')) {
-          toggleMenu();
-        }
-      });
-
-      // Close menu when pressing Escape
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-          toggleMenu();
-        }
-      });
-    });
-  </script>
 </head>
 <body>
-  
+
 <nav>
   <div class="nav-toggle">
     <span></span>
@@ -58,20 +27,22 @@
   </ul>
 </nav>
 
-<h1>About Me</h1>
-<p>
-  I’m Simon Zotoo  a developer, data analyst, and student leader. I’m currently pursuing a BSc in Information Technology at Wisconsin International University College, Ghana, where I also serve as the SCOTSA President.
-</p>
-<p>
-  I love building things that make life easier  from banking systems in Java to management tools in PHP, and dashboards in Power BI. I’m not just learning to code  I’m learning to solve real problems.
-</p>
-<p>
-  I’ve worked with the SSNIT Head Office as a database intern, managed student performance tools, and built apps like a birthday reminder system that actually remembers your friends better than you do.
-</p>
-<p>
-  Outside of tech? I play piano at church. I lead when it counts. And I believe in always showing up with purpose.
-</p>
-  
+<main class="container">
+  <h1>About Me</h1>
+  <p>
+    I’m Simon Zotoo — a developer, data analyst, and student leader. I’m currently pursuing a BSc in Information Technology at Wisconsin International University College, Ghana, where I also serve as the SCOTSA President.
+  </p>
+  <p>
+    I enjoy building systems that make life easier — from banking systems in Java to management tools in PHP and data dashboards in Power BI. I’m not just learning to code — I’m learning to solve real-world problems.
+  </p>
+  <p>
+    I’ve worked with the SSNIT Head Office as a database intern, helped manage student performance systems, and built apps like a birthday reminder that keeps track of what you forget.
+  </p>
+  <p>
+    Outside of tech, I play piano at church, I lead when it counts, and I believe in always showing up with purpose.
+  </p>
+</main>
+
 <footer>
   <p>&copy; 2025 Simon Zotoo. All rights reserved.</p>
 </footer>
