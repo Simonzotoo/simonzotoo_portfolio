@@ -25,21 +25,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Typewriter effect
+    // Improved Typewriter effect
     const typedTextSpan = document.querySelector(".typed-text");
     const cursorSpan = document.querySelector(".cursor");
 
     if (typedTextSpan) {
         const textArray = ["Data Analyst", "Developer", "SCOTSA President"];
-        const typingDelay = 100;
-        const erasingDelay = 50;
+        const typingDelay = 150; // Slightly slower for better readability
+        const erasingDelay = 100;
         const newTextDelay = 2000; // Delay between current and next text
         let textArrayIndex = 0;
         let charIndex = 0;
 
         function type() {
+            if (!typedTextSpan || !cursorSpan) return;
+            
             if (charIndex < textArray[textArrayIndex].length) {
-                if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+                if(!cursorSpan.classList.contains("typing")) {
+                    cursorSpan.classList.add("typing");
+                }
                 typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
                 charIndex++;
                 setTimeout(type, typingDelay);
@@ -51,8 +55,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         function erase() {
+            if (!typedTextSpan || !cursorSpan) return;
+            
             if (charIndex > 0) {
-                if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+                if(!cursorSpan.classList.contains("typing")) {
+                    cursorSpan.classList.add("typing");
+                }
                 typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
                 charIndex--;
                 setTimeout(erase, erasingDelay);
@@ -60,13 +68,15 @@ document.addEventListener('DOMContentLoaded', function() {
             else {
                 cursorSpan.classList.remove("typing");
                 textArrayIndex++;
-                if(textArrayIndex>=textArray.length) textArrayIndex=0;
-                setTimeout(type, typingDelay + 1100);
+                if(textArrayIndex >= textArray.length) {
+                    textArrayIndex = 0;
+                }
+                setTimeout(type, typingDelay);
             }
         }
 
         // Start the typing effect on load
-        if(textArray.length) setTimeout(type, newTextDelay + 250);
+        setTimeout(type, newTextDelay);
     }
 });
 
