@@ -481,4 +481,34 @@ footer {
   box-sizing: border-box;
   line-height: 1.8;
 }
+/* Smooth transition for menu */
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+/* When active, menu slides down */
+.nav-menu.active {
+  max-height: 500px;
+}
+
+/* Animated X toggle */
+.nav-toggle span {
+  transition: all 0.3s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
 
