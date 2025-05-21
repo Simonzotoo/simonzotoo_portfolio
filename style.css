@@ -46,8 +46,6 @@ main {
 .hero-left img {
   width: 100%;
   height: auto;
-  /* border-radius: 50%; */
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
 
 .hero-right {
@@ -62,6 +60,33 @@ main {
 .hero-right p {
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
+  min-height: 1.6em;
+}
+
+/* Typewriter effect styles */
+.typed-text {
+  font-weight: 500;
+  color: #003366;
+}
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  background-color: #003366;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+}
+
+.cursor.typing {
+  animation: none;
+}
+
+@keyframes blink {
+  0% { background-color: #003366; }
+  49% { background-color: #003366; }
+  50% { background-color: transparent; }
+  99% { background-color: transparent; }
+  100% { background-color: #003366; }
 }
 
 /* Card Styles */
