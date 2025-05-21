@@ -474,4 +474,11 @@ footer {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  box-sizing: border-box;
+  line-height: 1.8;
+}
 
