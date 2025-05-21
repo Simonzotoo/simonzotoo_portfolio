@@ -4,13 +4,67 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Behind the Scenes: My Role as SCOTSA President</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function() {
+      const navToggle = document.querySelector('.nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      function toggleMenu() {
+        navToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      }
+
+      navToggle.addEventListener('click', toggleMenu);
+      
+      // Close menu when clicking a link
+      document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', toggleMenu);
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!navToggle.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('active')) {
+          toggleMenu();
+        }
+      });
+
+      // Close menu when pressing Escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+          toggleMenu();
+        }
+      });
+    });
+  </script>
 </head>
 <body>
+  <nav>
+    <div class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../skills.html">Skills</a></li>
+      <li><a href="../projects.html">Projects</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
   <div class="container">
     <h1>Behind the Scenes: My Role as SCOTSA President</h1>
     <p>Insights from leading the School of Computing and Technology Students' Association — from organizing events to solving student issues and blending tech with leadership.</p>
-    <p><a href="../index.html">← Back to Home</a></p>
   </div>
+
+  <footer>
+    <p>&copy; 2025 Simon Zotoo. All rights reserved.</p>
+  </footer>
 </body>
 </html>
