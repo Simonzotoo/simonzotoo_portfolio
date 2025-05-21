@@ -113,6 +113,43 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  function toggleMenu() {
+    navToggle.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  }
+
+  navToggle.addEventListener('click', toggleMenu);
+
+  // Close menu when clicking a link
+  document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+      navToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+    }
+  });
+
+  // Close menu with ESC key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      navToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
