@@ -619,76 +619,79 @@
       background: var(--secondary);
     }
     
-    .contact-content {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    
-    .contact-info {
+    .contact-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
-      margin-bottom: 3rem;
-    }
-    
-    .contact-item {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 1.5rem;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-    }
-    
-    .contact-item:hover {
-      background: rgba(255, 255, 255, 0.1);
-      transform: translateY(-5px);
-    }
-    
-    .contact-icon {
-      font-size: 1.8rem;
-      color: var(--secondary);
-      margin-bottom: 1rem;
-    }
-    
-    .contact-item h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: white;
-    }
-    
-    .contact-item a, .contact-item p {
-      color: rgba(255, 255, 255, 0.8);
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    
-    .contact-item a:hover {
-      color: var(--secondary);
-    }
-    
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
       margin-top: 3rem;
     }
     
-    .social-link {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
+    .contact-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+    
+    .contact-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
-      transition: all 0.3s ease;
+      background: rgba(59, 130, 246, 0.1);
+      border-radius: 50%;
+      font-size: 2rem;
+      color: var(--primary);
     }
     
-    .social-link:hover {
-      background: var(--secondary);
-      transform: translateY(-5px) scale(1.1);
+    .contact-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--darker);
+    }
+    
+    .contact-card p {
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+    }
+    
+    .btn-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 500;
+    }
+    
+    .whatsapp-btn {
+      background: #25D366;
+      color: white;
+    }
+    
+    .whatsapp-btn:hover {
+      background: #128C7E;
+      transform: translateY(-3px);
+    }
+    
+    .call-btn {
+      background: var(--success);
+      color: white;
+    }
+    
+    .call-btn:hover {
+      background: #0e9f6e;
+      transform: translateY(-3px);
     }
     
     /* Footer */
@@ -732,6 +735,31 @@
       opacity: 0.7;
       margin-bottom: 2rem;
       line-height: 1.8;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    
+    .social-link {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+      background: var(--secondary);
+      transform: translateY(-5px) scale(1.1);
     }
     
     .copyright {
@@ -832,6 +860,10 @@
       
       .package-price {
         font-size: 2rem;
+      }
+      
+      .contact-cards {
+        grid-template-columns: 1fr;
       }
     }
     
@@ -970,7 +1002,7 @@
         <p class="subtitle">Affordable solutions with exceptional value</p>
       </div>
       <div class="packages-grid">
-        <div class="package-card">
+        <div class="package-card popular">
           <div class="popular-badge">Most Popular</div>
           <h3>Starter Website</h3>
           <div class="package-price"></div>
@@ -1072,176 +1104,57 @@
   <!-- Contact Section -->
   <section id="contact" class="section contact">
     <div class="container">
-     <!-- Replace your current Contact section with this card-style version -->
-<section id="contact" class="section contact">
-  <div class="container">
-    <div class="section-title">
-      <h2>Get in Touch</h2>
-      <p class="subtitle">Ready to start your project? Reach out today</p>
-    </div>
-    
-    <div class="contact-cards">
-      <!-- Email Card -->
-      <div class="contact-card">
-        <div class="card-icon">
-          <i class="fas fa-envelope"></i>
-        </div>
-        <h3>Email Us</h3>
-        <p>For detailed inquiries and quotes</p>
-        <a href="mailto:jaytechsolutions508@gmail.com?subject=Inquiry%20from%20Jay%20Tech%20Website&body=Hello%20Jay%20Tech%20Solutions,%0A%0AI%20would%20like%20to%20inquire%20about%20your%20services.%0A%0AMy%20name%3A%20%0AMy%20project%20needs%3A%20%0A%0AThank you!" class="btn btn-card">
-          <i class="fas fa-paper-plane"></i> Send Email
-        </a>
+      <div class="section-title">
+        <h2>Get in Touch</h2>
+        <p class="subtitle">Ready to start your project? Reach out today</p>
       </div>
       
-      <!-- WhatsApp Card -->
-      <div class="contact-card">
-        <div class="card-icon">
-          <i class="fab fa-whatsapp"></i>
-        </div>
-        <h3>WhatsApp</h3>
-        <p>For quick questions and chat</p>
-        <a href="https://wa.me/233249898478?text=Hello%20Jay%20Tech%20Solutions,%20I%20saw%20your%20website%20and%20would%20like%20to%20inquire%20about%20your%20services." class="btn btn-card whatsapp-btn" target="_blank">
-          <i class="fab fa-whatsapp"></i> Chat Now
-        </a>
-      </div>
-      
-      <!-- Call Card -->
-      <div class="contact-card">
-        <div class="card-icon">
-          <i class="fas fa-phone-alt"></i>
-        </div>
-        <h3>Call Us</h3>
-        <p>For immediate assistance</p>
-        <a href="tel:+233249898478" class="btn btn-card call-btn">
-          <i class="fas fa-phone"></i> Call Now
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Add this CSS to your stylesheet -->
-<style>
-  .contact-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-  
-  .contact-card {
-    background: white;
-    border-radius: 12px;
-    padding: 2.5rem;
-    text-align: center;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.03);
-  }
-  
-  .contact-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  }
-  
-  .card-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(59, 130, 246, 0.1);
-    border-radius: 50%;
-    font-size: 2rem;
-    color: var(--primary);
-  }
-  
-  .contact-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--darker);
-  }
-  
-  .contact-card p {
-    color: var(--gray);
-    margin-bottom: 1.5rem;
-  }
-  
-  .btn-card {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    font-weight: 500;
-  }
-  
-  .whatsapp-btn {
-    background: #25D366;
-    color: white;
-  }
-  
-  .whatsapp-btn:hover {
-    background: #128C7E;
-    transform: translateY(-3px);
-  }
-  
-  .call-btn {
-    background: var(--success);
-    color: white;
-  }
-  
-  .call-btn:hover {
-    background: #0e9f6e;
-    transform: translateY(-3px);
-  }
-  
-  @media (max-width: 768px) {
-    .contact-cards {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
-
-<!-- Keep the same JavaScript from previous example -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const phoneNumber = '233249898478'; // 
-    const formattedNumber = `+${phoneNumber}`;
-    
-    // Update WhatsApp links
-    document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
-      link.href = `https://wa.me/${phoneNumber}?text=Hello%20Jay%20Tech%20Solutions,%20I%20saw%20your%20website%20and%20would%20like%20to%20inquire%20about%20your%20services.`;
-    });
-    
-    // Update telephone links
-    document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-      link.href = `tel:${phoneNumber}`;
-    });
-    
-    // Update email if different
-    const email = 'jaytechsolutions508@gmail.com'; // REPLACE IF DIFFERENT
-    document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-      if(link.href.includes('jaytechsolutions@gmail.com')) {
-        link.href = `mailto:${email}?subject=Inquiry%20from%20Jay%20Tech%20Website&body=Hello%20Jay%20Tech%20Solutions,%0A%0AI%20would%20like%20to%20inquire%20about%20your%20services.%0A%0AMy%20name%3A%20%0AMy%20project%20needs%3A%20%0A%0AThank you!`;
-      }
-    });
-  });
-</script>
-          
-        
-          
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <h3>Location</h3>
-            <p>Kobbyheat streat North Legonn Accra, Ghana</p>
+      <div class="contact-cards">
+        <!-- Email Card -->
+        <div class="contact-card">
+          <div class="card-icon">
+            <i class="fas fa-envelope"></i>
           </div>
+          <h3>Email Us</h3>
+          <p>For detailed inquiries and quotes</p>
+          <a href="mailto:jaytechsolutions508@gmail.com?subject=Inquiry%20from%20Jay%20Tech%20Website&body=Hello%20Jay%20Tech%20Solutions,%0A%0AI%20would%20like%20to%20inquire%20about%20your%20services.%0A%0AMy%20name%3A%20%0AMy%20project%20needs%3A%20%0A%0AThank you!" class="btn btn-card">
+            <i class="fas fa-paper-plane"></i> Send Email
+          </a>
         </div>
         
-    
+        <!-- WhatsApp Card -->
+        <div class="contact-card">
+          <div class="card-icon">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <h3>WhatsApp</h3>
+          <p>For quick questions and chat</p>
+          <a href="https://wa.me/233249898478?text=Hello%20Jay%20Tech%20Solutions,%20I%20saw%20your%20website%20and%20would%20like%20to%20inquire%20about%20your%20services." class="btn btn-card whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i> Chat Now
+          </a>
+        </div>
+        
+        <!-- Call Card -->
+        <div class="contact-card">
+          <div class="card-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <h3>Call Us</h3>
+          <p>For immediate assistance</p>
+          <a href="tel:+233249898478" class="btn btn-card call-btn">
+            <i class="fas fa-phone"></i> Call Now
+          </a>
+        </div>
+      </div>
+      
+      <div class="contact-info" style="margin-top: 3rem;">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h3>Location</h3>
+          <p>Kobbyheat street North Legon, Accra, Ghana</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1316,6 +1229,25 @@
     
     window.addEventListener('load', animateOnScroll);
     window.addEventListener('scroll', animateOnScroll);
+    
+    // Update all contact links dynamically
+    document.addEventListener('DOMContentLoaded', function() {
+      // Update all email links
+      const email = 'jaytechsolutions508@gmail.com';
+      document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+        link.href = `mailto:${email}?subject=Inquiry%20from%20Jay%20Tech%20Website&body=Hello%20Jay%20Tech%20Solutions,%0A%0AI%20would%20like%20to%20inquire%20about%20your%20services.%0A%0AMy%20name%3A%20%0AMy%20project%20needs%3A%20%0A%0AThank you!`;
+      });
+      
+      // Phone/WhatsApp updates
+      const phoneNumber = '233249898478';
+      document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+        link.href = `https://wa.me/${phoneNumber}?text=Hello%20Jay%20Tech%20Solutions,%20I%20saw%20your%20website%20and%20would%20like%20to%20inquire%20about%20your%20services.`;
+      });
+      
+      document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+        link.href = `tel:${phoneNumber}`;
+      });
+    });
   </script>
 </body>
 </html>
