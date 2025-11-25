@@ -4,10 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Simon Zotoo</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
     :root {
       --primary: #4361ee;
@@ -16,78 +18,65 @@
       --gray: #6c757d;
       --light: #f8f9fa;
       --white: #ffffff;
-      --border-radius: 12px;
-      --box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      --box-shadow-hover: 0 10px 20px rgba(0,0,0,0.1);
-      --transition: all 0.3s ease;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      --radius: 12px;
+      --transition: .3s ease;
     }
 
     body {
-      font-family: 'Rubik', sans-serif;
-      line-height: 1.6;
+      margin: 0;
+      font-family: "Rubik", sans-serif;
+      background: #f5f7ff;
       color: var(--dark);
-      background-color: #f5f7ff;
     }
 
-    /* Navigation */
+    /* NAVIGATION — SAME AS INDEX */
     nav {
-      background-color: rgba(0, 51, 102, 0.98);
+      background: rgba(0, 51, 102, 0.98);
       padding: 1rem 2rem;
-      box-shadow: 0 2px 10px rgba(249, 248, 248, 0.1);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,.1);
     }
 
     .nav-container {
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
-      justify-content: flex-start; /* Changed to left-align */
+      gap: 2rem;
       align-items: center;
     }
 
     .logo {
-      font-weight: 700;
+      color: white;
       font-size: 1.5rem;
-      color: var(--white);
+      font-weight: 700;
       text-decoration: none;
     }
 
     .nav-menu {
       display: flex;
-      list-style: none;
       gap: 2rem;
-      margin-right: auto; /* Pushes menu left */
-      padding-left: 2rem; /* Space between logo and menu */
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
 
     .nav-menu a {
+      color: white;
       text-decoration: none;
-      color: var(--white);
       font-weight: 500;
-      transition: var(--transition);
       position: relative;
     }
 
-    .nav-menu a:hover {
-      color: rgba(255, 255, 255, 0.8);
-    }
-
     .nav-menu a::after {
-      content: '';
+      content: "";
       position: absolute;
-      bottom: -5px;
       left: 0;
+      bottom: -5px;
       width: 0;
       height: 2px;
-      background: var(--white);
+      background: white;
       transition: var(--transition);
     }
 
@@ -95,25 +84,20 @@
       width: 100%;
     }
 
-    /* Hamburger Menu */
+    /* Hamburger */
     .nav-toggle {
       display: none;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 24px;
-      height: 18px;
+      margin-left: auto;
       cursor: pointer;
-      position: absolute;
-      right: 2rem;
-      top: 1.5rem;
+      flex-direction: column;
     }
 
     .nav-toggle span {
-      display: block;
-      width: 100%;
-      height: 2px;
+      height: 3px;
+      width: 25px;
       background: white;
-      transition: var(--transition);
+      margin: 4px 0;
+      transition: .3s;
     }
 
     .nav-toggle.active span:nth-child(1) {
@@ -126,171 +110,6 @@
       transform: rotate(-45deg) translate(5px, -5px);
     }
 
-    /* Main Content */
-    main {
-      max-width: 1200px;
-      margin: 3rem auto;
-      padding: 0 2rem;
-    }
-
-    .page-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .page-header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: var(--primary);
-    }
-
-    .page-header p {
-      font-size: 1.1rem;
-      color: var(--gray);
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    /* Contact Cards */
-    .contact-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .contact-card {
-      background: white;
-      border-radius: var(--border-radius);
-      padding: 2rem;
-      box-shadow: var(--box-shadow);
-      transition: var(--transition);
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .contact-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--box-shadow-hover);
-    }
-
-    .contact-icon {
-      font-size: 2.5rem;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-    }
-
-    .contact-card h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: var(--dark);
-    }
-
-    .contact-card p {
-      color: var(--gray);
-      margin-bottom: 1.5rem;
-      flex-grow: 1;
-    }
-
-    .contact-link {
-      display: inline-block;
-      background: var(--primary);
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: var(--border-radius);
-      text-decoration: none;
-      font-weight: 500;
-      transition: var(--transition);
-      width: 100%;
-      max-width: 200px;
-    }
-
-    .contact-link:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-    }
-
-    /* Footer */
-    footer {
-      background: var(--dark);
-      color: white;
-      padding: 3rem 0 1.5rem;
-      margin-top: 4rem;
-    }
-
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .footer-section h3 {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-      position: relative;
-      padding-bottom: 0.5rem;
-    }
-
-    .footer-section h3::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 50px;
-      height: 2px;
-      background: var(--primary);
-    }
-
-    .footer-section p, 
-    .footer-section a {
-      color: #adb5bd;
-      margin-bottom: 0.8rem;
-      display: block;
-      transition: var(--transition);
-      text-decoration: none;
-    }
-
-    .footer-section a:hover {
-      color: white;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .social-links a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 50%;
-      transition: var(--transition);
-      color: white;
-    }
-
-    .social-links a:hover {
-      background: var(--primary);
-      transform: translateY(-3px);
-    }
-
-    .copyright {
-      text-align: center;
-      margin-top: 3rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      color: #adb5bd;
-      font-size: 0.9rem;
-    }
-
-    /* Responsive Design */
     @media (max-width: 768px) {
       .nav-toggle {
         display: flex;
@@ -298,149 +117,234 @@
 
       .nav-menu {
         position: fixed;
-        top: 50px;
+        top: 70px;
         left: -100%;
         width: 100%;
-        height: calc(60vh - 70px);
-        background: #003366; /* Hamburger menu background color */
+        height: 60vh;
+        background: #003366;
         flex-direction: column;
-        align-items: center; /* Left-aligned items */
-        justify-content: flex;
+        align-items: center;
         gap: 2rem;
-        transition: var(--transition);
-        padding: 2rem;
+        padding-top: 2rem;
+        transition: .3s;
       }
 
       .nav-menu.active {
         left: 0;
       }
     }
+
+    /* PAGE CONTENT */
+    main {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .contact-card {
+      background: white;
+      padding: 2rem;
+      border-radius: var(--radius);
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      transition: .3s;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .contact-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .contact-link {
+      display: inline-block;
+      margin-top: 1rem;
+      background: var(--primary);
+      color: white;
+      padding: .8rem 1.5rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: .3s;
+    }
+
+    .contact-link:hover {
+      background: var(--primary-dark);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      padding: 3rem 0 1.5rem;
+      color: white;
+      margin-top: 4rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      color: white;
+      transition: .3s;
+    }
+
+    .social-links a:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+    }
+
   </style>
 </head>
+
 <body>
+
+<!-- NAVIGATION -->
 <nav>
   <div class="nav-container">
-    <a href="index.html" class="logo">Simon Zotoo</a>
+
+  
+
     <div class="nav-toggle">
       <span></span>
       <span></span>
       <span></span>
     </div>
+
     <ul class="nav-menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="skills.html">Skills</a></li>
       <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
+
   </div>
 </nav>
 
 <main>
   <div class="page-header">
     <h1>Get In Touch</h1>
-    <p>Choose your preferred method to connect with me. I'm always happy to chat!</p>
+    <p>Select how you want to connect with me.</p>
   </div>
 
   <div class="contact-cards">
-    <!-- Phone Card -->
+
+    <!-- 1. Phone -->
     <div class="contact-card">
-      <div class="contact-icon">
-        <i class="fas fa-phone-alt"></i>
-      </div>
+      <i class="fas fa-phone-alt contact-icon"></i>
       <h2>Phone Call</h2>
-      <p>Call me directly for immediate conversation during business hours.</p>
+      <p>Call me directly anytime.</p>
       <a href="tel:+233249898478" class="contact-link">Call Now</a>
     </div>
 
-    <!-- WhatsApp Card -->
+    <!-- 2. WhatsApp -->
     <div class="contact-card">
-      <div class="contact-icon">
-        <i class="fab fa-whatsapp"></i>
-      </div>
+      <i class="fab fa-whatsapp contact-icon"></i>
       <h2>WhatsApp</h2>
-      <p>Message me on WhatsApp for quick chats and file sharing.</p>
+      <p>Quick messages and chats.</p>
       <a href="https://wa.me/233249898478" target="_blank" class="contact-link">Message Me</a>
     </div>
 
-    <!-- SMS Card -->
+    <!-- 3. SMS -->
     <div class="contact-card">
-      <div class="contact-icon">
-        <i class="fas fa-sms"></i>
-      </div>
-      <h2>Text Message</h2>
-      <p>Send me a traditional SMS if you prefer text messaging.</p>
+      <i class="fas fa-sms contact-icon"></i>
+      <h2>SMS</h2>
+      <p>Send a normal text message.</p>
       <a href="sms:+233249898478" class="contact-link">Send SMS</a>
     </div>
 
-    <!-- Email Card -->
+    <!-- 4. Email -->
     <div class="contact-card">
-      <div class="contact-icon">
-        <i class="fas fa-envelope"></i>
-      </div>
+      <i class="fas fa-envelope contact-icon"></i>
       <h2>Email</h2>
-      <p>Send me a detailed email for formal communication and attachments.</p>
+      <p>For formal messages and attachments.</p>
       <a href="mailto:justicesimonzotoo@gmail.com" class="contact-link">Send Email</a>
     </div>
 
-    <!-- LinkedIn Card -->
+    <!-- 5. LinkedIn -->
     <div class="contact-card">
-      <div class="contact-icon">
-        <i class="fab fa-linkedin-in"></i>
-      </div>
+      <i class="fab fa-linkedin-in contact-icon"></i>
       <h2>LinkedIn</h2>
-      <p>Connect professionally and send me a message on LinkedIn.</p>
+      <p>Connect professionally.</p>
       <a href="https://linkedin.com/in/simon-zotoo-45547a29a" target="_blank" class="contact-link">View Profile</a>
     </div>
 
-    <!-- GitHub Card -->
+    <!-- 6. GitHub -->
     <div class="contact-card">
-      <div class="contact-icon">
-        <i class="fab fa-github"></i>
-      </div>
+      <i class="fab fa-github contact-icon"></i>
       <h2>GitHub</h2>
-      <p>Explore my projects and repositories or contact me through GitHub.</p>
+      <p>Explore my repositories and work.</p>
       <a href="https://github.com/Simonzotoo" target="_blank" class="contact-link">Visit GitHub</a>
     </div>
+
   </div>
 </main>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-container">
-    <div class="footer-section">
+
+    <div>
       <h3>Contact</h3>
       <p><i class="fas fa-envelope"></i> justicesimonzotoo@gmail.com</p>
       <p><i class="fas fa-phone"></i> +233 249 898 478</p>
     </div>
-    <div class="footer-section">
+
+    <div>
       <h3>Connect</h3>
       <div class="social-links">
-        <a href="https://github.com/Simonzotoo" target="_blank" aria-label="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="https://linkedin.com/in/simon-zotoo-45547a29a" target="_blank" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="https://wa.me/233249898478" target="_blank" aria-label="WhatsApp">
-          <i class="fab fa-whatsapp"></i>
-        </a>
+        <a href="https://github.com/Simonzotoo"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/simon-zotoo-45547a29a"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/233249898478"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
-    <div class="footer-section">
+
+    <div>
       <h3>Navigation</h3>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
       <a href="projects.html">Projects</a>
       <a href="contact.html">Contact</a>
     </div>
-  </div>
-  <div class="copyright">
-    <p>&copy; 2025 Simon Zotoo. All rights reserved.</p>
+
   </div>
 </footer>
 
 <script>
-  // Mobile Navigation Toggle
   const navToggle = document.querySelector('.nav-toggle');
   const navMenu = document.querySelector('.nav-menu');
 
@@ -448,14 +352,7 @@
     navToggle.classList.toggle('active');
     navMenu.classList.toggle('active');
   });
-
-  // Close mobile menu when clicking a link
-  document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      navToggle.classList.remove('active');
-      navMenu.classList.remove('active');
-    });
-  });
 </script>
+
 </body>
 </html>

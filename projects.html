@@ -3,87 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Simon Zotoo's project portfolio: Java, PHP, and full-stack applications.">
+
+  <!-- SEO -->
   <title>Projects | Simon Zotoo</title>
+  <meta name="description" content="Explore projects built by Simon Zotoo — Java systems, PHP applications, and modern responsive websites." />
+  <meta name="keywords" content="Simon Zotoo projects, Java apps, PHP systems, SCOTSA, WIUC, Ghana developer" />
+  <meta name="author" content="Simon Zotoo" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Projects | Simon Zotoo">
+  <meta property="og:description" content="See Java apps, PHP systems, and websites developed by Simon Zotoo.">
+  <meta property="og:image" content="https://justicesimonzotoo.com/assets/images/Image_BW.png">
+  <meta property="og:url" content="https://justicesimonzotoo.com/projects.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
     :root {
-      --primary: #4357ee;
-      --primary-dark: #02071b;
+      --primary: #4361ee;
+      --primary-dark: #3a56d4;
       --dark: #212529;
       --gray: #6c757d;
       --light: #f8f9fa;
-      --border-radius: 12px;
-      --box-shadow: 0 4px 6px rgba(242, 246, 249, 0.05);
-      --box-shadow-hover: 0 10px 20px rgba(0,0,0,0.1);
-      --transition: all 0.3s ease;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      --white: #ffffff;
+      --radius: 12px;
+      --transition: .3s ease;
     }
 
     body {
-      font-family: 'Rubik', sans-serif;
-      line-height: 1.6;
+      margin: 0;
+      font-family: "Rubik", sans-serif;
+      background: #f5f7ff;
       color: var(--dark);
-      background-color: #f5f7ff;
     }
 
-    /* Navigation */
+    /* NAVIGATION (same as contact page) */
     nav {
-      background-color: rgba(0, 51, 102, 0.98);
+      background: rgba(0, 51, 102, 0.98);
       padding: 1rem 2rem;
-      box-shadow: 0 2px 10px rgba(249, 248, 248, 0.1);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,.1);
     }
 
     .nav-container {
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
-      justify-content: space-between;
+      gap: 2rem;
       align-items: center;
-      position: relative;
-    }
-
-    .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: white;
-      text-decoration: none;
     }
 
     .nav-menu {
       display: flex;
-      list-style: none;
       gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
 
     .nav-menu a {
-      text-decoration: none;
       color: white;
+      text-decoration: none;
       font-weight: 500;
-      transition: var(--transition);
       position: relative;
     }
 
-    .nav-menu a:hover {
-      color: rgba(255, 255, 255, 0.8);
-    }
-
     .nav-menu a::after {
-      content: '';
+      content: "";
       position: absolute;
-      bottom: -5px;
       left: 0;
+      bottom: -5px;
       width: 0;
       height: 2px;
       background: white;
@@ -94,41 +93,61 @@
       width: 100%;
     }
 
-    /* Hamburger Menu */
+    /* Hamburger */
     .nav-toggle {
       display: none;
+      margin-left: auto;
       cursor: pointer;
-      position: absolute;
-      top: 50%;
-      right: 2rem;
-      transform: translateY(-50%);
-      z-index: 1001;
+      flex-direction: column;
     }
 
     .nav-toggle span {
-      display: block;
-      width: 25px;
       height: 3px;
+      width: 28px;
       background: white;
       margin: 5px 0;
-      transition: var(--transition);
+      transition: .3s;
     }
 
     .nav-toggle.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
+      transform: rotate(45deg) translate(6px, 6px);
     }
     .nav-toggle.active span:nth-child(2) {
       opacity: 0;
     }
     .nav-toggle.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
+      transform: rotate(-45deg) translate(6px, -6px);
     }
 
-    /* Main Content */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: 60vh;
+        background: #003366;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding-top: 2rem;
+        transition: .3s;
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
+    }
+
+    /* PAGE CONTENT */
     main {
       max-width: 1200px;
       margin: 3rem auto;
-      padding: 0 2rem;
+      padding: 0 1.5rem;
     }
 
     .page-header {
@@ -136,281 +155,67 @@
       margin-bottom: 3rem;
     }
 
-    .page-header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: var(--primary);
-    }
-
-    .page-header p {
-      font-size: 1.1rem;
-      color: var(--gray);
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    /* Filter Buttons */
-    .filter-buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .filter-btn {
-      padding: 0.5rem 1.2rem;
-      border: none;
-      border-radius: 50px;
-      background: white;
-      color: var(--dark);
-      font-weight: 500;
-      cursor: pointer;
-      transition: var(--transition);
-      box-shadow: var(--box-shadow);
-    }
-
-    .filter-btn:hover, .filter-btn.active {
-      background: var(--primary);
-      color: white;
-    }
-
-    /* Project Cards */
-    .card-container {
+    .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
       gap: 2rem;
     }
 
-    .card {
+    .project-card {
       background: white;
-      border-radius: var(--border-radius);
-      overflow: hidden;
-      box-shadow: var(--box-shadow);
-      transition: var(--transition);
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--box-shadow-hover);
-    }
-
-    .card-img-container {
-      height: 200px;
-      overflow: hidden;
-    }
-
-    .card-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .card:hover .card-img {
-      transform: scale(1.05);
-    }
-
-    .card-content {
       padding: 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      transition: .3s;
     }
 
-    .card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
+    .project-card:hover {
+      transform: translateY(-5px);
     }
 
-    .card p {
-      color: var(--gray);
+    .project-img {
+      width: 100%;
+      height: 200px;
+      border-radius: var(--radius);
+      object-fit: cover;
       margin-bottom: 1rem;
-    }
-
-    .tech-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .tech-tag {
-      display: inline-block;
-      padding: 0.3rem 0.8rem;
-      background: #e9ecef;
-      border-radius: 50px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--dark);
     }
 
     .btn {
       display: inline-block;
-      padding: 0.6rem 1.2rem;
       background: var(--primary);
       color: white;
+      padding: .7rem 1.2rem;
+      border-radius: var(--radius);
       text-decoration: none;
-      border-radius: 50px;
-      font-weight: 500;
-      transition: var(--transition);
-      border: 2px solid var(--primary);
+      transition: .3s;
     }
 
     .btn:hover {
-      background: white;
-      color: var(--primary);
+      background: var(--primary-dark);
     }
 
-    .btn-outline {
-      background: white;
-      color: var(--primary);
-    }
-
-    .btn-outline:hover {
-      background: var(--primary);
-      color: white;
-    }
-
-    .card-actions {
-      display: flex;
-      gap: 0.8rem;
-    }
-
-    /* CTA Section */
-    .cta-section {
-      text-align: center;
-      margin: 4rem 0;
-    }
-
-    .cta-section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-
-    .cta-section p {
-      color: var(--gray);
-      max-width: 600px;
-      margin: 0 auto 2rem;
-    }
-
-    /* Footer */
     footer {
       background: var(--dark);
-      color: white;
       padding: 3rem 0 1.5rem;
-    }
-
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .footer-section h3 {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-      position: relative;
-      padding-bottom: 0.5rem;
-    }
-
-    .footer-section h3::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 50px;
-      height: 2px;
-      background: var(--primary);
-    }
-
-    .footer-section p, .footer-section a {
-      color: #adb5bd;
-      margin-bottom: 0.8rem;
-      display: block;
-      transition: var(--transition);
-    }
-
-    .footer-section a:hover {
       color: white;
-      padding-left: 5px;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .social-links a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 50%;
-      transition: var(--transition);
-    }
-
-    .social-links a:hover {
-      background: var(--primary);
-      transform: translateY(-3px);
-    }
-
-    .copyright {
-      text-align: center;
-      margin-top: 3rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      color: #adb5bd;
-      font-size: 0.9rem;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .nav-toggle {
-        display: block;
-      }
-
-      .nav-menu {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 70vh;
-        background: #003366;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-        transition: var(--transition);
-        padding-top: 80px;
-        z-index: 1000;
-      }
-
-      .nav-menu.active {
-        left: 0;
-      }
-
-      .card-container {
-        grid-template-columns: 1fr;
-      }
-
-      .filter-buttons {
-        justify-content: flex-start;
-      }
+      margin-top: 4rem;
     }
   </style>
 </head>
+
 <body>
+
+<!-- NAVIGATION -->
 <nav>
   <div class="nav-container">
-    <a href="index.html" class="logo">Simon Zotoo</a>
+
     <div class="nav-toggle">
       <span></span>
       <span></span>
       <span></span>
     </div>
+
     <ul class="nav-menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -418,139 +223,86 @@
       <li><a href="projects.html">Projects</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+
   </div>
 </nav>
 
+<!-- PAGE CONTENT -->
 <main>
   <div class="page-header">
-    <h1>Here are a few of Projects I have worked on</h1>
-    <p>Here's what I've built - each project solves real-world problems with clean, efficient code.</p>
+    <h1>My Projects</h1>
+    <p>A collection of real systems, websites, and applications I've built.</p>
   </div>
 
-  <div class="filter-buttons">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="java">Java</button>
-    <button class="filter-btn" data-filter="php">PHP</button>
-    <button class="filter-btn" data-filter="web">Web</button>
-  </div>
+  <div class="projects-grid">
 
-  <div class="section-header">
-    <h2>Websites I've Built</h2>
-    <p>Responsive websites crafted with HTML, CSS, and JavaScript</p>
-  </div>
-
-  <div class="card-container">
-    <!-- Website 1 -->
-    <div class="card" data-category="web">
-      <div class="card-img-container">
-        <img src="assets/images/hym.PNG" alt="Ministry Website" class="card-img" loading="lazy">
-      </div>
-      <div class="card-content">
-        <h3>Ministry Website</h3>
-        <p>Clean, responsive Ministry site with animated elements and dark mode toggle.</p>
-        <div class="tech-stack">
-          <span class="tech-tag">HTML5</span>
-          <span class="tech-tag">CSS3</span>
-          <span class="tech-tag">JavaScript</span>
-        </div>
-        <div class="card-actions">
-          <a href="https://simonzotoo.github.io/trial/" class="btn" target="_blank">Live Site</a>
-          <a href="https://github.com/Simonzotoo" class="btn btn-outline">View Code</a>
-        </div>
-      </div>
+    <!-- Project 1 -->
+    <div class="project-card">
+      <img src="assets/images/hym.PNG" class="project-img">
+      <h3>Ministry Website</h3>
+      <p>A modern ministry website with animations and responsive layout.</p>
+      <a href="https://simonzotoo.github.io/trial/" class="btn" target="_blank">View Live</a>
     </div>
 
-    <!-- Website 2 -->
-    <div class="card" data-category="web">
-      <div class="card-img-container">
-        <img src="assets/images/vicfirt.PNG" alt="Portfolio Website" class="card-img" loading="lazy">
-      </div>
-      <div class="card-content">
-        <h3>Portfolio Website</h3>
-        <p>Portfolio website for a global musician</p>
-        <div class="tech-stack">
-          <span class="tech-tag">HTML5</span>
-          <span class="tech-tag">CSS Grid</span>
-          <span class="tech-tag">JavaScript</span>
-        </div>
-        <div class="card-actions">
-          <a href="https://simonzotoo.github.io/george_vicfirt/" class="btn" target="_blank">Live Site</a>
-          <a href="https://github.com/Simonzotoo" class="btn btn-outline">View Code</a>
-        </div>
-      </div>
+    <!-- Project 2 -->
+    <div class="project-card">
+      <img src="assets/images/vicfirt.PNG" class="project-img">
+      <h3>Musician Portfolio</h3>
+      <p>Full portfolio website for a global musician.</p>
+      <a href="https://simonzotoo.github.io/george_vicfirt/" class="btn" target="_blank">View Live</a>
     </div>
 
-    <!-- Website 3 -->
-    <div class="card" data-category="web">
-      <div class="card-img-container">
-        <img src="assets/images/jaytechhh.PNG" alt="Tech Website" class="card-img" loading="lazy">
-      </div>
-      <div class="card-content">
-        <h3>A Tech Website</h3>
-        <p>Tech website with animations and a responsive design.</p>
-        <div class="tech-stack">
-          <span class="tech-tag">HTML5</span>
-          <span class="tech-tag">CSS Flexbox</span>
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">Chart.js</span>
-        </div>
-        <div class="card-actions">
-          <a href="https://simonzotoo.github.io/jaytechsolutions/" class="btn" target="_blank">Live Site</a>
-          <a href="https://github.com/Simonzotoo" class="btn btn-outline">View Code</a>
-        </div>
-      </div>
+    <!-- Project 3 -->
+    <div class="project-card">
+      <img src="assets/images/jaytechhh.PNG" class="project-img">
+      <h3>Tech Website</h3>
+      <p>A clean and animated technology website.</p>
+      <a href="https://simonzotoo.github.io/jaytechsolutions/" class="btn" target="_blank">View Live</a>
     </div>
 
-    <!-- Other project cards remain the same -->
-  </div>
+    <!-- Project 4 
+    <div class="project-card">
+      <img src="assets/images/bankapp.png" class="project-img">
+      <h3>Java Banking System</h3>
+      <p>A full banking system built in Java with GUI, login, and transactions.</p>
+      <a href="#" class="btn">Coming Soon</a>
+    </div>
 
-  <div class="cta-section">
-    <h2>Want to See More?</h2>
-    <p>Check out my GitHub profile for additional projects and code samples.</p>
-    <a href="https://github.com/Simonzotoo" class="btn" target="_blank">
-      <i class="fab fa-github"></i> Visit My GitHub
-    </a>
-  </div>
+  </div> -->
 </main>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-container">
-    <div class="footer-section">
+
+    <div>
       <h3>Contact</h3>
       <p><i class="fas fa-envelope"></i> justicesimonzotoo@gmail.com</p>
       <p><i class="fas fa-phone"></i> +233 249 898 478</p>
-      <p><i class="fas fa-map-marker-alt"></i> Accra, Ghana</p>
     </div>
-    <div class="footer-section">
+
+    <div>
       <h3>Connect</h3>
       <div class="social-links">
-        <a href="https://github.com/Simonzotoo" target="_blank" aria-label="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="https://linkedin.com/in/simon-zotoo-45547a29a" target="_blank" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="https://wa.me/233249898478" target="_blank" aria-label="WhatsApp">
-          <i class="fab fa-whatsapp"></i>
-        </a>
+        <a href="https://github.com/Simonzotoo"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/simon-zotoo-45547a29a"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/233249898478"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
-    <div class="footer-section">
-      <h3>Quick Links</h3>
+
+    <div>
+      <h3>Navigation</h3>
       <a href="index.html">Home</a>
-      <a href="about.html">About Me</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
       <a href="projects.html">Projects</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Get in Touch</a>
+      <a href="contact.html">Contact</a>
     </div>
-  </div>
-  <div class="copyright">
-    <p>&copy; 2025 Simon Zotoo. All rights reserved.</p>
+
   </div>
 </footer>
 
 <script>
-  // Mobile Navigation Toggle
   const navToggle = document.querySelector('.nav-toggle');
   const navMenu = document.querySelector('.nav-menu');
 
@@ -558,47 +310,7 @@
     navToggle.classList.toggle('active');
     navMenu.classList.toggle('active');
   });
-
-  // Close mobile menu when clicking a link
-  document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      navToggle.classList.remove('active');
-      navMenu.classList.remove('active');
-    });
-  });
-
-  // Project Filtering
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.card');
-
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      // Update active button
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-
-      const filterValue = button.getAttribute('data-filter');
-
-      // Filter projects
-      projectCards.forEach(card => {
-        if (filterValue === 'all' || card.getAttribute('data-category').includes(filterValue)) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
-
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
-  });
 </script>
+
 </body>
 </html>

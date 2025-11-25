@@ -3,11 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Skills | Simon Zotoo</title>
+
+  <!-- SEO -->
+  <title>Skills | Justice Simon Zotoo</title>
+  <meta name="description" content="Explore the technical and soft skills of Justice Simon Zotoo — Software Engineer, Web Developer, Data Analyst, Leader, and Innovator.">
+  <meta name="keywords" content="Justice Simon Zotoo skills, Simon Zotoo, Jaykeys, developer skills, programming skills Ghana, WIUC, SCOTSA President, Java, PHP, Power BI, SPSS, Web Development">
+  <meta name="author" content="Justice Simon Zotoo">
+
+  <meta property="og:title" content="Skills | Justice Simon Zotoo">
+  <meta property="og:description" content="Technical and soft skills of Justice Simon Zotoo, including Java, PHP, MySQL, analytics, leadership, and web development.">
+  <meta property="og:image" content="https://justicesimonzotoo.com/assets/images/Image_BW.png">
+  <meta property="og:url" content="https://justicesimonzotoo.com/skills.html">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Skills | Justice Simon Zotoo">
+  <meta name="twitter:description" content="Explore what Simon Zotoo can do — tech skills, leadership experience, and professional strengths.">
+  <meta name="twitter:image" content="https://justicesimonzotoo.com/assets/images/Image_BW.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
     :root {
       --primary: #4361ee;
@@ -17,121 +35,122 @@
       --gray: #6c757d;
       --light-gray: #f8f9fa;
       --white: #ffffff;
-      --border-radius: 12px;
-      --box-shadow: 0 4px 20px rgba(67, 97, 238, 0.1);
-      --transition: all 0.3s ease;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      --radius: 12px;
+      --transition: 0.3s ease;
+      --shadow: 0 4px 20px rgba(0,0,0,0.08);
     }
 
     body {
-      font-family: 'Rubik', sans-serif;
-      line-height: 1.6;
+      margin: 0;
+      font-family: "Rubik", sans-serif;
+      background: var(--light-gray);
       color: var(--dark);
-      background-color: var(--light-gray);
     }
 
-    /* Navigation */
-/* Navigation */
+    /* NAVBAR — SAME AS CONTACT PAGE */
     nav {
-      background-color: rgba(0, 51, 102, 0.98);
+      background: rgba(0, 51, 102, 0.98);
       padding: 1rem 2rem;
-      box-shadow: 0 2px 10px rgba(249, 248, 248, 0.1);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,.1);
     }
 
     .nav-container {
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
-      justify-content: flex-start; /* Changed to left-align */
       align-items: center;
-    }
-
-    .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: var(--white);
-      text-decoration: none;
+      gap: 2rem;
+      justify-content: flex-start; /* everything LEFT aligned */
     }
 
     .nav-menu {
-      display: flex;
       list-style: none;
+      display: flex;
       gap: 2rem;
-      margin-right: auto; /* Pushes menu left */
-      padding-left: 2rem; /* Space between logo and menu */
+      margin: 0;
+      padding: 0;
     }
 
     .nav-menu a {
+      color: white;
       text-decoration: none;
-      color: var(--white);
       font-weight: 500;
-      transition: var(--transition);
       position: relative;
     }
 
-    .nav-menu a:hover {
-      color: rgba(255, 255, 255, 0.8);
-    }
-
     .nav-menu a::after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: -5px;
       left: 0;
       width: 0;
       height: 2px;
-      background: var(--white);
-      transition: var(--transition);
+      background: white;
+      transition: 0.3s;
     }
 
     .nav-menu a:hover::after {
       width: 100%;
     }
 
-    /* Hamburger Menu */
+    /* HAMBURGER */
     .nav-toggle {
       display: none;
       flex-direction: column;
-      justify-content: space-between;
-      width: 24px;
-      height: 18px;
+      margin-left: auto;
       cursor: pointer;
-      position: absolute;
-      right: 2rem;
-      top: 1.5rem;
     }
 
     .nav-toggle span {
-      display: block;
-      width: 100%;
-      height: 2px;
+      height: 3px;
+      width: 28px;
       background: white;
-      transition: var(--transition);
+      margin: 5px 0;
+      transition: .3s;
     }
 
     .nav-toggle.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
+      transform: rotate(45deg) translate(6px, 6px);
     }
     .nav-toggle.active span:nth-child(2) {
       opacity: 0;
     }
     .nav-toggle.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
+      transform: rotate(-45deg) translate(6px, -6px);
     }
 
-    /* Main Content */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: 60vh;
+        background: #003366;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transition: .3s;
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
+    }
+
+    /* MAIN CONTENT */
     main {
       max-width: 1200px;
       margin: 3rem auto;
-      padding: 0 2rem;
+      padding: 0 1.5rem;
     }
 
     .page-header {
@@ -139,20 +158,6 @@
       margin-bottom: 3rem;
     }
 
-    .page-header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: var(--primary);
-    }
-
-    .page-header p {
-      font-size: 1.1rem;
-      color: var(--gray);
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    /* Skills Grid */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -160,88 +165,46 @@
     }
 
     .skill-card {
-      background: var(--white);
-      border-radius: var(--border-radius);
+      background: white;
       padding: 2rem;
-      box-shadow: var(--box-shadow);
-      transition: var(--transition);
+      border-radius: var(--radius);
       border-top: 4px solid var(--primary);
+      box-shadow: var(--shadow);
+      transition: .3s;
     }
 
     .skill-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(67, 97, 238, 0.15);
     }
 
     .skill-icon {
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-      background: var(--primary-light);
       width: 60px;
       height: 60px;
+      background: var(--primary-light);
       border-radius: 50%;
       display: flex;
-      align-items: center;
       justify-content: center;
-    }
-
-    .skill-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
+      align-items: center;
+      font-size: 1.8rem;
       color: var(--primary);
+      margin-bottom: 1.2rem;
     }
 
-    .skill-card p {
-      color: var(--gray);
-      line-height: 1.7;
-    }
-
-    /* Footer */
+    /* FOOTER */
     footer {
-      background: var(--dark);
-      color: var(--white);
+      background: #212529;
       padding: 3rem 0 1.5rem;
+      color: white;
       margin-top: 4rem;
     }
 
     .footer-container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 2rem;
+      padding: 0 1.5rem;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
-    }
-
-    .footer-section h3 {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-      position: relative;
-      padding-bottom: 0.5rem;
-    }
-
-    .footer-section h3::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 50px;
-      height: 2px;
-      background: var(--primary);
-    }
-
-    .footer-section p, 
-    .footer-section a {
-      color: #adb5bd;
-      margin-bottom: 0.8rem;
-      display: block;
-      transition: var(--transition);
-      text-decoration: none;
-    }
-
-    .footer-section a:hover {
-      color: var(--white);
     }
 
     .social-links {
@@ -250,208 +213,143 @@
     }
 
     .social-links a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       width: 40px;
       height: 40px;
       background: rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border-radius: 50%;
-      transition: var(--transition);
-      color: var(--white);
+      color: white;
+      transition: .3s;
     }
 
     .social-links a:hover {
       background: var(--primary);
       transform: translateY(-3px);
     }
-
-    .copyright {
-      text-align: center;
-      margin-top: 3rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      color: #adb5bd;
-      font-size: 0.9rem;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .nav-menu {
-        position: fixed;
-        top: 0px;
-        left: -100%;
-        width: 100%;
-        height: 100vh;
-        background: #003366;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-        transition: var(--transition);
-      }
-
-      .nav-menu.active {
-        left: 0;
-      }
-
-      .nav-toggle {
-        display: flex;
-      }
-    }
   </style>
 </head>
+
 <body>
+
+<!-- NAVIGATION -->
 <nav>
-  <div class="nav-toggle">
-    <span></span>
-    <span></span>
-    <span></span>
+  <div class="nav-container">
+
+    <div class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
   </div>
-  <ul class="nav-menu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="skills.html">Skills</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    
-  </ul>
 </nav>
 
 <main>
   <div class="page-header">
     <h1>My Skills</h1>
-    <p>I don't just collect tools I use them to build, solve, and communicate effectively.</p>
+    <p>I use the right tools to build, solve, and create real results.</p>
   </div>
 
   <div class="skills-grid">
-    <!-- Technical Skills -->
+
     <div class="skill-card">
-      <div class="skill-icon">
-        <i class="fab fa-java"></i>
-      </div>
+      <div class="skill-icon"><i class="fab fa-java"></i></div>
       <h3>Java Development</h3>
-      <p>Building robust desktop applications with real functionality, including banking systems and secure login portals with GUI interfaces.</p>
+      <p>Building functional applications including banking systems and secure portals.</p>
     </div>
 
     <div class="skill-card">
-      <div class="skill-icon">
-        <i class="fab fa-php"></i>
-      </div>
+      <div class="skill-icon"><i class="fab fa-php"></i></div>
       <h3>PHP & MySQL</h3>
-      <p>Developing web-based management systems that handle real users and data with efficient CRUD operations and database management.</p>
+      <p>Developing web systems with strong database structures and CRUD functionality.</p>
     </div>
 
     <div class="skill-card">
-      <div class="skill-icon">
-        <i class="fas fa-chart-line"></i>
-      </div>
+      <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
       <h3>Power BI</h3>
-      <p>Transforming raw data into meaningful insights through interactive dashboards and visualizations that tell compelling stories.</p>
+      <p>Transforming raw data into insights through dashboards and analytics.</p>
     </div>
 
     <div class="skill-card">
-      <div class="skill-icon">
-        <i class="fas fa-chart-bar"></i>
-      </div>
+      <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
       <h3>SPSS Analytics</h3>
-      <p>Analyzing complex academic and organizational datasets to extract meaningful patterns and statistical significance.</p>
+      <p>Performing statistical analysis and interpreting academic datasets.</p>
     </div>
 
     <div class="skill-card">
-      <div class="skill-icon">
-        <i class="fas fa-code"></i>
-      </div>
+      <div class="skill-icon"><i class="fas fa-code"></i></div>
       <h3>Frontend Development</h3>
-      <p>Creating responsive, mobile-friendly interfaces with clean HTML5, modern CSS3, and interactive JavaScript functionality.</p>
+      <p>Building responsive websites using HTML, CSS, and JavaScript.</p>
     </div>
 
-    <!-- Soft Skills -->
     <div class="skill-card">
-      <div class="skill-icon">
-        <i class="fas fa-users"></i>
-      </div>
+      <div class="skill-icon"><i class="fas fa-users"></i></div>
       <h3>Leadership</h3>
-      <p>As SCOTSA President, leading teams with vision and purpose to achieve tangible results both on and off the screen.</p>
+      <p>Leading teams as SCOTSA President and inspiring collaboration.</p>
     </div>
-    
+
     <div class="skill-card">
-      <div class="skill-icon">
-        <i class="fas fa-music"></i>
-      </div>
+      <div class="skill-icon"><i class="fas fa-music"></i></div>
       <h3>Musicianship</h3>
-      <p>Years of piano performance have cultivated discipline, focus, and creative problem-solving that translates to my technical work.</p>
+      <p>Piano performance refining focus, creativity, and discipline.</p>
     </div>
 
     <div class="skill-card">
-      <div class="skill-icon">
-        <i class="fas fa-lightbulb"></i>
-      </div>
+      <div class="skill-icon"><i class="fas fa-lightbulb"></i></div>
       <h3>Problem Solving</h3>
-      <p>Approaching challenges methodically to develop efficient, scalable solutions that address real user needs.</p>
+      <p>Breaking down challenges into clear, scalable solutions.</p>
     </div>
 
-      <div class="skill-card">
-      <div class="skill-icon">
-        <i class="fas fa-lightbulb"></i>
-      </div>
-      <h3>Chief Executive Officer</h3>
-      <p>Approaching challenges with critical thinking and analysis to develop efficient, scalable solutions that address real user needs by working with people .</p>
-    </div>
   </div>
 </main>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-container">
-    <div class="footer-section">
+    <div>
       <h3>Contact</h3>
       <p><i class="fas fa-envelope"></i> justicesimonzotoo@gmail.com</p>
       <p><i class="fas fa-phone"></i> +233 249 898 478</p>
     </div>
-    <div class="footer-section">
+
+    <div>
       <h3>Connect</h3>
       <div class="social-links">
-        <a href="https://github.com/Simonzotoo" target="_blank" aria-label="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="https://linkedin.com/in/simon-zotoo-45547a29a" target="_blank" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="https://wa.me/233249898478" target="_blank" aria-label="WhatsApp">
-          <i class="fab fa-whatsapp"></i>
-        </a>
+        <a href="https://github.com/Simonzotoo"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/simon-zotoo-45547a29a"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/233249898478"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
-    <div class="footer-section">
+
+    <div>
       <h3>Quick Links</h3>
       <a href="index.html">Home</a>
+      <a href="about.html">About</a>
       <a href="projects.html">Projects</a>
-      <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
     </div>
-  </div>
-  <div class="copyright">
-    <p>&copy; 2025 Simon Zotoo. All rights reserved.</p>
   </div>
 </footer>
 
 <script>
-  // Mobile Navigation Toggle
-  const navToggle = document.querySelector('.nav-toggle');
-  const navMenu = document.querySelector('.nav-menu');
+  const navToggle = document.querySelector(".nav-toggle");
+  const navMenu = document.querySelector(".nav-menu");
 
-  navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('active');
-    navMenu.classList.toggle('active');
-  });
-
-  // Close mobile menu when clicking a link
-  document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      navToggle.classList.remove('active');
-      navMenu.classList.remove('active');
-    });
+  navToggle.addEventListener("click", () => {
+    navToggle.classList.toggle("active");
+    navMenu.classList.toggle("active");
   });
 </script>
+
 </body>
 </html>

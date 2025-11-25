@@ -1,258 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - My Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>About | Simon Zotoo</title>
+  <meta name="description" content="Learn more about Simon Zotoo — Software Engineer, Web Developer, Data Analyst, and SCOTSA President. Explore his background, mission, values, and journey.">
+  <meta name="keywords" content="Simon Zotoo, Justice Simon Zotoo, Jaykeys, Ghana developer, WIUC, SCOTSA, Software Engineer Ghana">
+  <meta name="author" content="Simon Zotoo">
+
+  <meta property="og:title" content="About | Simon Zotoo">
+  <meta property="og:description" content="Explore Simon Zotoo’s professional journey — Software Engineer, Web Developer, Leader and Tech Enthusiast.">
+  <meta property="og:image" content="https://justicesimonzotoo.com/assets/images/Image_BW.png">
+  <meta property="og:url" content="https://justicesimonzotoo.com/about.html">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
     :root {
       --primary: #4361ee;
-      --primary-light: #e6e9ff;
       --primary-dark: #003366;
-      --dark: #212529;
       --gray: #6c757d;
-      --light-gray: #f8f9fa;
+      --light: #f5f7ff;
       --white: #ffffff;
-      --border-radius: 12px;
-      --box-shadow: 0 4px 20px rgba(67, 97, 238, 0.1);
-      --transition: all 0.3s ease;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      --dark: #212529;
+      --radius: 12px;
     }
 
     body {
+      margin: 0;
+      background: var(--light);
       font-family: 'Rubik', sans-serif;
-      line-height: 1.6;
       color: var(--dark);
-      background-color: var(--light-gray);
     }
 
-    /* Improved Navigation */
+    /* NAVIGATION (Matches Contact Page) */
     nav {
-      background-color: rgba(0, 51, 102, 0.98);
+      background: rgba(0, 51, 102, 0.98);
       padding: 1rem 2rem;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,.1);
     }
 
     .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
       max-width: 1200px;
       margin: 0 auto;
-    }
-
-    .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: white;
-      text-decoration: none;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
     }
 
     .nav-menu {
-      display: flex;
       list-style: none;
+      display: flex;
       gap: 2rem;
+      padding: 0;
+      margin: 0;
     }
 
     .nav-menu a {
-      text-decoration: none;
       color: white;
+      text-decoration: none;
       font-weight: 500;
-      transition: var(--transition);
       position: relative;
-    }
-
-    .nav-menu a:hover {
-      color: rgba(255, 255, 255, 0.8);
-    }
-
-    .nav-menu a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: white;
-      transition: var(--transition);
     }
 
     .nav-menu a:hover::after {
       width: 100%;
     }
 
-    /* Hamburger Menu Styles */
-/* Hamburger Menu */
-.hamburger {
-  display: none;
-  cursor: pointer;
-  position: fixed;
-  top: 1.5rem;
-  right: 2rem;
-  z-index: 1001;
-}
+    .nav-menu a::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      height: 2px;
+      width: 0;
+      background: white;
+      transition: .3s;
+    }
 
-.hamburger span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background: white;
-  margin: 5px 0;
-  transition: var(--transition);
-}
+    /* Hamburger */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      margin-left: auto;
+      cursor: pointer;
+    }
 
-/* Mobile Menu Styles */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
+    .nav-toggle span {
+      width: 28px;
+      height: 3px;
+      background: white;
+      margin: 5px 0;
+      transition: .3s;
+    }
 
-  .nav-menu {
-    position: fixed;
-    top: 50px;
-    left: -100%; /* Starts off-screen halfway */
-    width: 100%; /* Covers half the page */
-    height: 70vh;
-    background: #003366;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    transition: var(--transition);
-    padding-top: 80px;
-    z-index: 1000;
-  }
+    .nav-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    .nav-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .nav-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
 
-  .nav-menu.active {
-    left: 0; /* Slides in to cover left half */
-  }
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: flex;
+      }
 
-  .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-  .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
-}
+      .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: 60vh;
+        background: var(--primary-dark);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transition: .3s;
+      }
 
-    /* Main Content */
+      .nav-menu.active {
+        left: 0;
+      }
+    }
+
+    /* ABOUT PAGE CONTENT */
     main {
       max-width: 1200px;
       margin: 3rem auto;
-      padding: 0 2rem;
+      padding: 0 1.5rem;
     }
 
-    /* Hero Section */
     .about-hero {
       display: flex;
-      align-items: center;
       gap: 3rem;
+      align-items: center;
       margin-bottom: 4rem;
     }
 
     .about-image {
-      width: 350px;
-      height: 350px;
-      border-radius: var(--border-radius);
+      width: 330px;
+      height: 330px;
+      border-radius: var(--radius);
       object-fit: cover;
-      box-shadow: var(--box-shadow);
-      border: 5px solid var(--white);
+      border: 5px solid white;
+      box-shadow: 0 5px 20px rgba(0,0,0,.1);
     }
 
     .about-intro h1 {
       font-size: 2.5rem;
       color: var(--primary);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
-    .about-intro .lead-text {
-      font-size: 1.2rem;
-      line-height: 1.7;
+    .lead-text {
       color: var(--gray);
-      margin-bottom: 2rem;
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
     }
 
     .social-links {
       display: flex;
       gap: 1rem;
-      margin-top: 2rem;
     }
 
     .social-links a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       width: 40px;
       height: 40px;
-      background: var(--primary-light);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #e6e9ff;
       border-radius: 50%;
-      transition: var(--transition);
       color: var(--primary);
+      transition: .3s;
     }
 
     .social-links a:hover {
       background: var(--primary);
-      color: var(--white);
+      color: white;
       transform: translateY(-3px);
     }
 
-    /* Info Cards */
     .info-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
-      margin-bottom: 4rem;
-      align-items: stretch;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
     .info-card {
-      background: var(--white);
-      border-radius: var(--border-radius);
+      background: white;
       padding: 2rem;
-      box-shadow: var(--box-shadow);
-      transition: var(--transition);
+      border-radius: var(--radius);
+      box-shadow: 0 5px 20px rgba(0,0,0,.1);
       border-top: 4px solid var(--primary);
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-
-    .info-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(67, 97, 238, 0.15);
-    }
-
-    .card-icon {
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-      background: var(--primary-light);
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .info-card h3 {
-      font-size: 1.3rem;
       margin-bottom: 1rem;
       color: var(--primary);
     }
@@ -260,308 +217,204 @@
     .info-card p {
       color: var(--gray);
       line-height: 1.7;
-      flex-grow: 1;
-      margin-bottom: 1.5rem;
     }
 
-    /* About Details */
     .about-details {
-      background: var(--white);
-      border-radius: var(--border-radius);
+      background: white;
       padding: 3rem;
-      box-shadow: var(--box-shadow);
-      margin-bottom: 4rem;
+      margin-top: 3rem;
+      border-radius: var(--radius);
+      box-shadow: 0 5px 20px rgba(0,0,0,.1);
+      text-align: center;
     }
 
     .about-details h2 {
-      font-size: 1.8rem;
       color: var(--primary);
-      margin-bottom: 1.5rem;
-      text-align: center;
+      margin-bottom: 1rem;
     }
 
-    .about-details p {
-      color: var(--gray);
-      line-height: 1.8;
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    /* Footer */
+    /* FOOTER */
     footer {
       background: var(--dark);
-      color: var(--white);
       padding: 3rem 0 1.5rem;
+      color: white;
+      margin-top: 4rem;
     }
 
     .footer-container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 2rem;
+      padding: 0 1.5rem;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
     }
 
-    .footer-section h3 {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-      position: relative;
-      padding-bottom: 0.5rem;
-    }
-
-    .footer-section h3::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 50px;
-      height: 2px;
-      background: var(--primary);
-    }
-
-    .footer-section p, 
-    .footer-section a {
-      color: #adb5bd;
-      margin-bottom: 0.8rem;
-      display: block;
-      transition: var(--transition);
-      text-decoration: none;
-    }
-
-    .footer-section a:hover {
-      color: var(--white);
-    }
-
-    .footer-social-links {
-      display: flex;
-      gap: 1rem;
-    }
-
     .footer-social-links a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: rgba(255,255,255,0.1);
+      color: white;
+      background: rgba(255,255,255,.1);
+      padding: 10px;
       border-radius: 50%;
-      transition: var(--transition);
-      color: var(--white);
+      transition: .3s;
     }
 
     .footer-social-links a:hover {
       background: var(--primary);
-      transform: translateY(-3px);
     }
+    /* RESPONSIVE FIX FOR ABOUT SECTION */
+@media (max-width: 900px) {
+  .about-hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
 
-    .copyright {
-      text-align: center;
-      margin-top: 3rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      color: #adb5bd;
-      font-size: 0.9rem;
-    }
+  .about-image {
+    width: 250px;
+    height: 250px;
+  }
 
-    /* Responsive Design */
-    @media (max-width: 900px) {
-      .about-hero {
-        flex-direction: column;
-        text-align: center;
-      }
+  .about-intro {
+    text-align: center;
+    width: 100%;
+  }
 
-      .social-links {
-        justify-content: center;
-      }
-    }
+  .social-links {
+    justify-content: center;
+  }
+}
 
-    @media (max-width: 768px) {
-      .hamburger {
-        display: block;
-      }
+@media (max-width: 600px) {
+  .about-image {
+    width: 200px;
+    height: 200px;
+  }
 
-      .nav-menu {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100vh;
-        background: var(--primary-dark);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-        transition: var(--transition);
-        padding-top: 80px;
-      }
+  .about-intro h1 {
+    font-size: 2rem;
+  }
 
-      .nav-menu.active {
-        left: 0;
-      }
+  .about-intro .lead-text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
 
-      .about-details {
-        padding: 2rem 1.5rem;
-      }
-    }
-    </style>
+  </style>
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">Simon Zotoo</a>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <main>
-      <section class="about-hero">
-        <img src="assets/images/Image_BW.png" alt="Simon Zotoo" class="about-image">
-        <div class="about-intro">
-          <h1>About Me</h1>
-          <p class="lead-text">I'm Simon Zotoo a passionate developer, data analyst, and student leader currently pursuing my BSc in Information Technology at Wisconsin International University College, Ghana.</p>
-          
-          <div class="social-links">
-            <a href="https://github.com/Simonzotoo" target="_blank" aria-label="GitHub">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="https://linkedin.com/in/simon-zotoo-45547a29a" target="_blank" aria-label="LinkedIn">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://wa.me/233249898478" target="_blank" aria-label="WhatsApp">
-              <i class="fab fa-whatsapp"></i>
-            </a>
-          </div>
-        </div>
-      </section>
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-container">
+    <div class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-      <div class="info-cards">
-        <div class="info-card education">
-          <div class="card-icon">
-            <i class="fas fa-graduation-cap"></i>
-          </div>
-          <h3>Education</h3>
-    <p>Currently pursuing a BSc in Information Technology at Wisconsin International University College, Ghana. Serving as President of the School of Computing and Technology Students' Association, I lead strategic technology initiatives, oversee project execution, and advocate for student interests bridging the gap between academic learning and industry-relevant skills.</p>
-        </div>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-        <div class="info-card development">
-          <div class="card-icon">
-            <i class="fas fa-laptop-code"></i>
-          </div>
-          <h3>Development</h3>
-          <p>Full-stack developer and technology leader with a track record of architecting secure, scalable, and business-critical systems. Proven expertise in delivering enterprise-grade Java banking platforms, PHP-driven operational management solutions, and advanced Power BI analytics dashboards translating complex requirements into high-impact, data-driven products that drive measurable results.</p>
-        </div>
+<main>
 
-        <div class="info-card experience">
-          <div class="card-icon">
-            <i class="fas fa-briefcase"></i>
-          </div>
-          <h3>Experience</h3>
-          <p>My professional journey includes a database internship at SSNIT Head Office, where I worked on enterprise-level data management and optimization. I have developed secure, scalable systems for academic performance analytics and engineered high-utility applications that leverage robust database architectures to improve efficiency and reliability.</p>
-        </div>
+  <section class="about-hero">
+    <img src="assets/images/Image_BW.png" class="about-image" />
 
-        <div class="info-card personal">
-          <div class="card-icon">
-            <i class="fas fa-music"></i>
-          </div>
-          <h3>Personal</h3>
-        <p>While my focus is on delivering impactful technology solutions, I also enjoy playing the piano at church, a pursuit that subtly enhances my creativity, discipline, and attention to detail in professional work.</p>
-        </div>
+    <div class="about-intro">
+      <h1>About Me</h1>
+      <p class="lead-text">
+        I'm Simon Zotoo — a passionate developer, data analyst, and leader pursuing my BSc in IT at WIUC Ghana.
+      </p>
 
-        <div class="info-card personal">
-          <div class="card-icon">
-            <i class="fas fa-bullseye"></i>
-          </div>
-          <h3>Mission</h3>
-          <p>
-            To harness the power of technology and creativity to build impactful, scalable solutions 
-            that solve real-world problems. I aim to inspire, mentor, and collaborate with others 
-            while continuously sharpening my skills in data analytics, software development, and leadership.
-          </p>
-        </div>
-
-        <div class="info-card personal">
-          <div class="card-icon">
-            <i class="fas fa-lightbulb"></i>
-          </div>
-          <h3>Vision</h3>
-          <p>
-            To be a trailblazing technology leader who bridges innovation, data, and creativity  
-            shaping the future of digital solutions, empowering communities, and inspiring 
-            the next generation of tech professionals.
-          </p>
-        </div>
+      <div class="social-links">
+        <a href="https://github.com/Simonzotoo"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/simon-zotoo-45547a29a"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/233249898478"><i class="fab fa-whatsapp"></i></a>
       </div>
+    </div>
+  </section>
 
-      <section class="about-details">
-        <h2>My Philosophy</h2>
-    <p>I believe technology should serve people first. I combine technical expertise with a user-focused mindset to create solutions that are functional, intuitive, and accessible. Whether developing systems, building websites, or analyzing data, my goal is to address real-world needs effectively. I view leadership as the ability to empower others through technology while keeping people at the center of every decision.</p>
-      </section>
-    </main>
+  <div class="info-cards">
 
-    <footer>
-      <div class="footer-container">
-        <div class="footer-section">
-          <h3>Contact</h3>
-          <p><i class="fas fa-envelope"></i> justicesimonzotoo@gmail.com</p>
-          <p><i class="fas fa-phone"></i> +233 249 898 478</p>
-        </div>
-        <div class="footer-section">
-          <h3>Connect</h3>
-          <div class="footer-social-links">
-            <a href="https://github.com/Simonzotoo" target="_blank" aria-label="GitHub">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="https://linkedin.com/in/simon-zotoo-45547a29a" target="_blank" aria-label="LinkedIn">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://wa.me/233249898478" target="_blank" aria-label="WhatsApp">
-              <i class="fab fa-whatsapp"></i>
-            </a>
-          </div>
-        </div>
-        <div class="footer-section">
-          <h3>Navigation</h3>
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="projects.html">Projects</a>
-          <a href="contact.html">Contact</a>
-        </div>
+    <div class="info-card">
+      <h3>Education</h3>
+      <p>Pursuing a BSc IT at WIUC Ghana and serving as President of the School of Computing and Technology Students’ Association.</p>
+    </div>
+
+    <div class="info-card">
+      <h3>Development</h3>
+      <p>Developer with experience in Java, PHP, MySQL, and full-stack systems with real-world functionality.</p>
+    </div>
+
+    <div class="info-card">
+      <h3>Experience</h3>
+      <p>Former intern at SSNIT Head Office (Database Department), working on enterprise data systems.</p>
+    </div>
+
+    <div class="info-card">
+      <h3>Personal</h3>
+      <p>I play the piano, which sharpens my creativity and discipline in tech work.</p>
+    </div>
+
+  </div>
+
+  <section class="about-details">
+    <h2>My Philosophy</h2>
+    <p>
+      I believe technology should be simple, useful, and built for people. My focus is to create solutions
+      that solve real problems while improving everyday experiences.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-container">
+
+    <div>
+      <h3>Contact</h3>
+      <p><i class="fas fa-envelope"></i> justicesimonzotoo@gmail.com</p>
+      <p><i class="fas fa-phone"></i> +233 249 898 478</p>
+    </div>
+
+    <div>
+      <h3>Connect</h3>
+      <div class="footer-social-links">
+        <a href="https://github.com/Simonzotoo"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/simon-zotoo-45547a29a"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/233249898478"><i class="fab fa-whatsapp"></i></a>
       </div>
-      <div class="copyright">
-        <p>&copy; 2025 Simon Zotoo. All rights reserved.</p>
-      </div>
-    </footer>
+    </div>
 
-    <script>
-        // Hamburger menu functionality
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
+    <div>
+      <h3>Navigation</h3>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
+  </div>
+</footer>
 
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-    </script>
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
+</script>
+
 </body>
 </html>
